@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Mobile App</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+
+<body style="background: rgb(255,255,255);">
+    <div class="text-center"><img class="img-fluid" src="assets/img/cl-_3_.webp" width="280" style="margin-top: 13px;"></div>
+    <div style="margin-top: 12px;">
+        <div id="saldo-total"><span>Saldo Total: US$3188.90</span></div><style>
+    /* Estilo para o título "Saldo Total" */
+    #saldo-total {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        padding: 20px;
+        color: white;
+        background: linear-gradient(90deg, #1abc9c, #16a085);
+        border-radius: 10px;
+    }
+    
+    /* Estilo para o fundo bonito */
+    body {
+        background: linear-gradient(90deg, #ffff00, #ffd700);
+        background-size: cover;
+        background-position: center center;
+        height: 100vh;
+        margin: 0;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+</style>
+    </div>
+    <div class="saldo-container">
+        <div class="saldo-texto">
+            <h2>Saldo Disponible</h2>
+            <p>US$760</p>
+        </div><button class="botao-solicitar-saque">Solicitar la retirada</button>
+    </div><style>
+.saldo-container {
+  background-image: linear-gradient(to right, #5cb85c, #3a8a3a);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  margin-top: 8px;
+}
+
+.saldo-texto {
+  color: white;
+  text-align: left;
+}
+
+.saldo-texto h2 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.saldo-texto p {
+  margin-bottom: 0;
+  margin-right: 85px;
+  font-size: 32px;
+}
+
+.botao-solicitar-saque {
+  background-color: white;
+  border: none;
+  color: #3a8a3a;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  width: 80vw;
+  margin: 10px auto;
+}
+
+.botao-solicitar-saque:hover {
+  background-color: #3a8a3a;
+  color: white;
+}
+    
+ @media (min-width: 768px) {
+  /* estilos para telas maiores, como tablets e desktops */
+  .botao-solicitar-saque {
+    width: auto;
+    margin: 0;
+  }
+}
+
+</style>
+    <div style="margin-bottom: 13px;padding-right: 32px;padding-left: 32px;margin-top: 46px;">
+        <h4 class="text-center" style="margin-top: 36px;margin-bottom: -40px;color: rgb(106,106,106);">buscando el código secreto...</h4><style>
+/* Estilo para o texto do código */
+#code {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(to bottom, #ededed, #dcdcdc);
+}
+
+/* Animação para os números do código */
+@keyframes rollIn {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.code-number {
+    display: inline-block;
+    animation-name: rollIn;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.5, 0.05, 0.1, 0.3);
+}
+
+.code-number:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.code-number:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.code-number:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.code-number:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.code-number:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.code-number:nth-child(6) {
+    animation-delay: 0.6s;
+}
+</style>
+        <div id="code"><span class="code-number"></span><span class="code-number"></span><span class="code-number"></span><span class="code-number"></span><span class="code-number"></span><span class="code-number"></span></div><script>
+    // Função para gerar um código aleatório com 6 caracteres
+    function generateCode() {
+        var code = "";
+        var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        for (var i = 0; i < 6; i++) {
+            code += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return code;
+    }
+
+    // Função para atualizar o código a cada 0,5 segundos
+    function updateCode() {
+        var code = generateCode();
+        var codeElements = document.getElementsByClassName("code-number");
+        for (var i = 0; i < codeElements.length; i++) {
+            codeElements[i].innerHTML = code.charAt(i);
+            codeElements[i].style.animationDelay = i * 0.1 + "s";
+        }
+        setTimeout(updateCode, 500);
+    }
+
+    // Iniciando a atualização do código
+    updateCode();
+</script>
+    </div>
+    <div class="carousel-container">
+        <div class="carousel-track"><img src="assets/img/logos/1.webp" alt="Imagem 1" class="carousel-image"><img src="assets/img/logos/2.webp" alt="Imagem 2" class="carousel-image"><img src="assets/img/logos/3.webp" alt="Imagem 3" class="carousel-image"><img src="assets/img/logos/5.webp" alt="Imagem 5" class="carousel-image"><img src="assets/img/logos/7.webp" alt="Imagem 6" class="carousel-image"><img src="assets/img/logos/1.webp" alt="Imagem 1" class="carousel-image"><img src="assets/img/logos/2.webp" alt="Imagem 2" class="carousel-image"><img src="assets/img/logos/3.webp" alt="Imagem 3" class="carousel-image"><img src="assets/img/logos/5.webp" alt="Imagem 5" class="carousel-image"><img src="assets/img/logos/7.webp" alt="Imagem 6" class="carousel-image"><img src="assets/img/logos/1.webp" alt="Imagem 1" class="carousel-image"><img src="assets/img/logos/2.webp" alt="Imagem 2" class="carousel-image"><img src="assets/img/logos/3.webp" alt="Imagem 3" class="carousel-image"><img src="assets/img/logos/5.webp" alt="Imagem 5" class="carousel-image"><img src="assets/img/logos/7.webp" alt="Imagem 6" class="carousel-image"></div>
+    </div><style>
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+.carousel-image {
+  max-width: 100px;
+  height: auto;
+}
+
+/* Adicione a seguinte regra de mídia para evitar que a imagem se torne muito pequena em dispositivos pequenos */
+@media screen and (max-width: 480px) {
+  .carousel-image {
+    max-width: 90px;
+  }
+}
+
+</style><script>
+const carouselTrack = document.querySelector('.carousel-track');
+const carouselImages = document.querySelectorAll('.carousel-image');
+const imageWidth = carouselImages[0].clientWidth;
+
+let imageIndex = 0;
+
+setInterval(() => {
+  imageIndex++;
+  if (imageIndex >= carouselImages.length) {
+    imageIndex = 0;
+  }
+  carouselTrack.style.transform = `translateX(-${imageWidth * imageIndex}px)`;
+}, 2000);
+
+</script>
+    <div class="text-center" style="margin-top: 33px;">
+        <div class="text-center"><center><button id="botao-gerar-codigo" class="b1" style="text-align: center;">Generar código</button></div><script>
+
+function copiarCodigo() {
+  let codigo = document.getElementById("codigo").textContent;
+  codigo.style.filter = "blur(5px)"; // aplica o desfoque
+  let loader = document.getElementById("loader");
+
+  loader.style.display = "block"; // exibe a div de carregamento
+}
+
+gerarCodigo(); // chama a função de geração de código ao carregar a página
+</script><style>
+body {
+  background-color: #f2f2f2;
+  margin-bottom: 200px;
+}
+
+#codigo {
+  font-size: 24px;
+  font-family: monospace;
+  background-color: #ffffff;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+
+button {
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+@media screen and (max-width: 600px) {
+  #codigo, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-left: 0;
+  }
+}
+
+
+#loader {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#loader img {
+  width: 150px;
+  height: 150px;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.blur {
+			filter: blur(5px);
+		}
+    
+.b1 {
+  width: 220px;
+  background: linear-gradient(to bottom, #00b8e4, #00a5dd);
+  font-size: 18px;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+    
+.b1:hover {
+  background: linear-gradient(to bottom, #00a5dd, #00b8e4);
+  cursor: pointer;
+}
+
+</style><script>
+var loader = document.createElement("div");
+loader.id = "loader";
+loader.innerHTML = "<img src='assets/img/ia-2.webp' alt='Loader personalizado'>";
+document.body.appendChild(loader);
+
+function showLoader() {
+  loader.style.display = "block";
+  document.body.classList.add("blur");
+}
+
+function hideLoader() {
+  setTimeout(function() {
+    loader.style.display = "none";
+    document.body.classList.remove("blur");
+    window.location.href = "oferta.html";
+  }, 3000);
+}
+
+var botaoCopiar = document.getElementById("botao-gerar-codigo");
+
+botaoCopiar.addEventListener("click", function() {
+  showLoader();
+
+  // Copie o texto aqui
+
+  hideLoader();
+});
+</script><style>
+  .blur {
+    filter: blur(5px);
+  }
+</style>
+    </div>
+    <div style="background: #ffffff;">
+        <div style="position: fixed;bottom: 0;left: 0;right: 0;background-color: white;padding-top: 30px;">
+            <div class="d-flex justify-content-center align-items-center">
+                <h6 class="d-flex align-items-center" style="margin-right: 25px;font-weight: bold;color: rgb(24,106,187);">INTELIGENCIA ARTIFICIAL</h6><img class="img-fluid" src="assets/img/logos/9.webp" width="120">
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>

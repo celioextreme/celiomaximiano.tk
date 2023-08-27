@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Mobile App</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+
+<body style="background: rgb(255,255,255);">
+    <div style="margin-top: 12px;">
+        <div id="saldo-total"><span>Saldo Total: US$3188.90</span></div><style>
+    /* Estilo para o título "Saldo Total" */
+    #saldo-total {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        padding: 20px;
+        color: white;
+        background: linear-gradient(90deg, #1abc9c, #16a085);
+        border-radius: 10px;
+    }
+    
+    /* Estilo para o fundo bonito */
+    body {
+        background: linear-gradient(90deg, #b2dfdb, #80cbc4);
+        background-size: cover;
+        background-position: center center;
+        height: 100vh;
+        margin: 0;
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-top: 8px;
+    }
+</style><script>
+    // Código JavaScript pode ser adicionado aqui, se necessário
+</script>
+    </div>
+    <div style="margin-top: 14px;">
+        <div class="saldo-container">
+            <div class="saldo-texto">
+                <h2>Saldo Disponible</h2>
+                <p>US$760</p>
+            </div><button class="botao-solicitar-saque">Solicitar la retirada</button>
+        </div><style>
+.saldo-container {
+  background-image: linear-gradient(to right, #5cb85c, #3a8a3a);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.saldo-texto {
+  color: white;
+  text-align: left;
+}
+
+.saldo-texto h2 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.saldo-texto p {
+  margin-bottom: 0;
+  margin-right: 55px;
+  font-size: 32px;
+}
+
+.botao-solicitar-saque {
+  background-color: white;
+  border: none;
+  color: #3a8a3a;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botao-solicitar-saque:hover {
+  background-color: #3a8a3a;
+  color: white;
+}
+
+</style>
+    </div>
+    <div style="background: rgba(213,242,203,0.41);padding-top: 21px;padding-bottom: 48px;margin-top: 10px;margin-bottom: 16px;">
+        <div><style>
+  body {
+    background-color: #f2f2f2;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+  }
+  #imagem-aleatoria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  #imagem-aleatoria img {
+    max-width: 70%;
+    max-height: 70%;
+  }
+  .texto-aleatorio {
+    margin-top: 50px;
+  }
+  .texto-aleatorio h1 {
+    color: #808080;
+    font-size: 26px;
+    margin-bottom: 10px;
+    margin-top: -40px;
+    font-weight: bold
+  }
+  .texto-aleatorio h2 {
+    color: #00cc00;
+    font-size: 46px;
+    margin-bottom: 20px;
+    font-weight: bold
+  }
+
+  /* Adaptação para dispositivos móveis */
+  @media screen and (max-width: 767px) {
+    #imagem-aleatoria {
+      height: auto;
+      margin-top: 32px;
+    }
+    #imagem-aleatoria img {
+      max-width: 60%;
+      max-height: 250px;
+    }
+  }
+</style>
+            <div id="imagem-aleatoria"></div>
+            <div class="texto-aleatorio">
+                <h1></h1>
+                <h2></h2>
+            </div><script>
+  window.onload = function() {
+    var imagens = [
+      "https://static.wixstatic.com/media/1f1f58_5f409310be2748289ca825f854f4d5d6~mv2.webp",
+      "https://static.wixstatic.com/media/1f1f58_09ea9a284d094a92bf5baf41b5a5fb74~mv2.webp",
+      "https://static.wixstatic.com/media/1f1f58_b189528f425d4a988455b0438bb4192e~mv2.webp"
+    ];
+    var textos = [
+      {
+        h1: "Empresa Microsoft Ofrecida:",
+        h2: "US$ 25.90"
+      },
+      {
+        h1: "Empresa Amazon Ofrecida",
+        h2: "US$ 25.90"
+      },
+      {
+        h1: "Empresa Mercado Libre Ofrecida",
+        h2: "US$ 25.90"
+      }
+    ];
+    var indiceAleatorio = Math.floor(Math.random() * imagens.length);
+    var imagemAleatoria = imagens[indiceAleatorio];
+    var textoAleatorio = textos[indiceAleatorio];
+    document.getElementById("imagem-aleatoria").innerHTML = "<img src='" + imagemAleatoria + "'>";
+    document.querySelector(".texto-aleatorio h1").innerText = textoAleatorio.h1;
+    document.querySelector(".texto-aleatorio h2").innerText = textoAleatorio.h2;
+  };
+</script>
+        </div>
+        <div><button id="aceitar">ACEPTAR</button><button id="recusar">RECHAZAR</button><img id="money-image" src="assets/img/din.webp"><style>
+button {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+#aceitar {
+  background-color: green;
+}
+
+#recusar {
+  background-color: red;
+}
+
+#money-image {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+</style><script>
+const aceitarBtn = document.getElementById("aceitar");
+const moneyImg = document.getElementById("money-image");
+
+aceitarBtn.addEventListener("click", function() {
+  moneyImg.style.display = "block";
+  setTimeout(function() {
+    window.location.href = "concluido.html";
+  }, 3000);
+});
+</script></div>
+    </div>
+    <div style="background: #ffffff;">
+        <div style="position: fixed;bottom: 0;left: 0;right: 0;background-color: white;padding-top: 25px;">
+            <div class="d-flex justify-content-center align-items-center">
+                <h6 class="d-flex align-items-center" style="margin-right: 25px;font-weight: bold;color: rgb(24,106,187);">INTELIGENCIA ARTIFICIAL</h6><img class="img-fluid" src="assets/img/logos/9.webp" width="120">
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>
