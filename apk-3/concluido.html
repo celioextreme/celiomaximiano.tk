@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Mobile App</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+
+<body style="background: rgb(213,255,245);">
+    <div>
+        <div id="saldo-total"><span>Saldo Total: </span><span id="saldo">912,88</span></div><style>
+    /* Estilo para o título "Saldo Total" */
+    #saldo-total {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        padding: 20px;
+        color: white;
+        background: linear-gradient(90deg, #1abc9c, #16a085);
+        border-radius: 10px;
+    }
+    
+    /* Estilo para o fundo bonito */
+    body {
+        background: linear-gradient(90deg, #b2dfdb, #80cbc4);
+        background-size: cover;
+        background-position: center center;
+        height: 100vh;
+        margin: 0;
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-top: 12px;
+    }
+    
+#saldo {
+  display: inline-block;
+  font-size: 26px;
+  font-weight: bold;
+  color: yellow;
+  animation: aumentar 2s ease-out, pulsar 1s ease-out 2;
+}
+
+@keyframes aumentar {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes pulsar {
+  0% {
+    transform: scale(1);
+    color: white;
+  }
+  50% {
+    transform: scale(1.2);
+    color: green;
+  }
+  100% {
+    transform: scale(1);
+    color: white;
+  }
+}
+
+</style><script>
+    // Código JavaScript pode ser adicionado aqui, se necessário
+const saldo = document.getElementById("saldo");
+
+window.addEventListener("load", () => {
+  const valorAtual = saldo.innerHTML;
+  const valorAtualizado = (parseFloat(valorAtual.replace("US$", "").replace(".", "").replace(",", ".")) + 87.10).toFixed(2).replace(".", ",");
+  saldo.innerHTML = "US$" + valorAtualizado;
+});
+
+</script>
+    </div>
+    <div style="margin-top: 8px;">
+        <div class="saldo-container">
+            <div class="saldo-texto">
+                <h2>Saldo Disponible</h2><span id="saldo-texto">US$112</span>
+            </div><button class="botao-solicitar-saque">Solicitar la retirada</button>
+        </div><style>
+.saldo-container {
+  background-image: linear-gradient(to right, #5cb85c, #3a8a3a);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.saldo-texto {
+  color: white;
+  text-align: left;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  animation: aumentar 2s ease-out, pulsar 1s ease-out 2;
+}
+
+.saldo-texto h2 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.saldo-texto p {
+  margin-bottom: 0;
+  margin-right: 90px;
+  font-size: 36px;
+}
+
+.botao-solicitar-saque {
+  background-color: white;
+  border: none;
+  color: #3a8a3a;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botao-solicitar-saque:hover {
+  background-color: #3a8a3a;
+  color: white;
+}
+
+</style><script>
+    const saldoTexto = document.getElementById("saldo-texto");
+
+window.addEventListener("load", () => {
+  const valorAtual = saldoTexto.innerHTML;
+  const valorAtualizado = (parseFloat(valorAtual.replace("US$", "").replace(".", "").replace(",", ".")) + 188.90).toFixed(2).replace(".", ",");
+  saldoTexto.innerHTML = "US$" + valorAtualizado;
+});
+</script><style>
+      #botao-sacar {
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .notification-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    z-index: 9999;
+    padding: 10px 0;
+    animation: slide-down 0.5s ease-out;
+  }
+
+  .notification {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    padding: 16px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .notification-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    margin-right: 16px;
+  }
+
+  .notification-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .notification-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .notification-description {
+    font-size: 14px;
+  }
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>
+        <div class="notification-wrapper">
+            <div class="notification"><img src="assets/img/PayPal_Logo_Icon_2014.svg.webp" class="notification-image">
+                <div class="notification-text"><span class="notification-title">Transferencia recibida</span><span class="notification-description">Ha recibido una transferencia de US$300.90 de Códigos Rentables Ltd.</span></div>
+            </div>
+        </div><script>
+  botaoSacar.addEventListener("click", function() {
+    setTimeout(function(){
+      notificationWrapper.style.display = "block";
+    }, 4000);
+  });
+
+</script>
+        <div class="modal-saque">
+            <div class="modal-conteudo">
+                <h2>Solicitar una baja</h2>
+                <form><label class="form-label" for="chave-pix">Introduzca su email de PayPal:</label><input type="text" id="chave-pix" name="chave-pix"><button id="botao-sacar">Retirar dinero</button></form>
+            </div>
+        </div><style>
+.modal-saque {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-conteudo {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+
+</style><script>
+const botaoSolicitarSaque = document.querySelector(".botao-solicitar-saque");
+const modalSaque = document.querySelector(".modal-saque");
+const botaoSacar = document.getElementById("botao-sacar");
+const notificationWrapper = document.querySelector(".notification-wrapper");
+
+botaoSolicitarSaque.addEventListener("click", (event) => {
+  event.preventDefault(); // evita redirecionar a página
+  modalSaque.style.display = "flex";
+});
+
+botaoSacar.addEventListener("click", (event) => {
+  event.preventDefault(); // evita redirecionar a página
+  const chavePix = document.getElementById("chave-pix").value;
+  console.log(`Solicitando saque com a chave PIX ${chavePix}`);
+  // aqui você pode fazer alguma ação, como enviar os dados para o servidor
+  modalSaque.style.display = "none";
+  
+  setTimeout(function(){
+    notificationWrapper.style.display = "block";
+  }, 4000);
+});
+    
+function mudarValor() {
+  setTimeout(function() {
+    document.getElementById("saldo-texto").innerHTML = "R$ 0,00";
+  }, 5000);
+}
+</script>
+    </div>
+    <div class="text-center bounce animated" style="margin-top: 33px;background: rgba(249,249,249,0.43);margin-bottom: 0px;margin-left: 10px;margin-right: 10px;padding-top: 10px;padding-bottom: 10px;"><img class="img-fluid" src="assets/img/emoji.webp" width="150">
+        <h2 class="text-center" style="font-size: 29.4px;font-family: Montserrat, sans-serif;font-weight: bold;text-shadow: 0px 0px 1px;color: rgb(0,0,0);">Usted recibió</h2>
+        <h1 class="text-center" style="font-size: 42.4px;font-weight: bold;color: rgb(10,156,7);text-shadow: 0px 0px 2px rgb(4,69,6);">U$ 87.10</h1>
+    </div>
+    <div class="text-center" style="margin-top: 29px;"><a class="btn btn-primary btn-lg" role="button" href="index.html" style="background: rgb(5,95,30);font-size: 24px;font-weight: bold;"><i class="far fa-money-bill-alt" style="margin-right: 8px;"></i>GANA MÁS</a><button class="btn btn-primary btn-lg botao-solicitar-saque" type="button" style="background: rgb(0,98,140);margin-top: 18px;color: rgb(255,255,255);"><i class="fas fa-wallet" style="margin-right: 8px;"></i><strong>SOLICITAR LA RETIRADA</strong></button></div>
+    <div style="background: #ffffff;">
+        <div style="position: fixed;bottom: 0;left: 0;right: 0;background-color: white;padding-top: 15px;">
+            <div class="d-flex justify-content-center align-items-center">
+                <h6 class="d-flex align-items-center" style="margin-right: 25px;font-weight: bold;color: rgb(24,106,187);">INTELIGENCIA ARTIFICIAL</h6><img class="img-fluid" src="assets/img/logos/9.webp" width="120">
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>
